@@ -146,16 +146,11 @@ def create_movie_tiles_content(movies):
     content = ''
     i = 1
     for movie in movies:
-        # Extract the youtube ID from the url
-        youtube_id_match = re.search(r'(?<=v=)[^&#]+', movie.trailer_youtube_url)  # NOQA
-        youtube_id_match = youtube_id_match or re.search(r'(?<=be/)[^&#]+', movie.trailer_youtube_url)  # NOQA
-        trailer_youtube_id = youtube_id_match.group(0) if youtube_id_match else None  # NOQA
-
         # Append the tile for the movie with its content filled in
         content += movie_tile_content.format(
             movie_title = movie.title,
             poster_image_url = movie.poster_image_url,
-            trailer_youtube_id = trailer_youtube_id,
+            trailer_youtube_id = movie.trailer_youtube_url,
             movie_storyline = movie.storyline
         )
         
@@ -169,7 +164,7 @@ def create_movie_tiles_content(movies):
           content += '''
           <div class="clearfix visible-lg"></div>
           ''';
-        
+          
         i = i + 1;
         
     return content
