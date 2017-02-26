@@ -37,7 +37,7 @@ movie5 = media.Movie(
     "A 1979 British religious satire comedy film starring and written "
     "by the comedy group Monty Python",
     "http://cdn30.us1.fansshare.com/image/montypythonslifeofbrian/the-best-life-of-brian-quotes-monty-python-life-of-brian-96191304.jpg",  # NOQA
-    "https://www.youtube.com/watch?v=TKPmGjVFbrYlethal "
+    "https://www.youtube.com/watch?v=TKPmGjVFbrY"
     )
 
 movie6 = media.Movie(
