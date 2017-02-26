@@ -161,7 +161,7 @@ def create_movie_tiles_content(movies):
         
         if i % 2 == 0:
           content += '''
-          <div class="clearfix visible-sm visible-md"></div>
+          <div class="clearfix hidden-xs hidden-lg"></div>
           ''';
         elif i % 3 == 0:
           content += '''
