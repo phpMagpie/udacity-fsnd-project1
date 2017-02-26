@@ -46,6 +46,9 @@ main_page_head = '''
             background-color: #EEE;
             cursor: pointer;
         }
+        .movie-tile h2 {
+            min-height: 70px;
+        }
         .scale-media {
             padding-bottom: 56.25%;
             position: relative;
