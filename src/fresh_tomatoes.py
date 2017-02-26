@@ -1,6 +1,7 @@
 import webbrowser
 import os
 import re
+from math import *
 
 # Styles and scripting for the page
 main_page_head = '''
@@ -33,8 +34,13 @@ main_page_head = '''
             height: 100%;
         }
         .movie-tile {
+            border-radius: 10px;
             margin-bottom: 20px;
             padding-top: 20px;
+            -webkit-transition: background 500ms ease-in-out;
+            -moz-transition: background 500ms ease-in-out;
+            -o-transition: background 500ms ease-in-out;
+            transition: background 500ms ease-in-out;
         }
         .movie-tile:hover {
             background-color: #EEE;
@@ -122,11 +128,12 @@ main_page_content = '''
 
 # A single movie entry html template
 movie_tile_content = '''
-<div class="col-md-6 col-lg-4 movie-tile text-center"
+<div class="col-sm-6 col-lg-4 movie-tile text-center"
     data-trailer-youtube-id="{trailer_youtube_id}"
     data-toggle="modal" data-target="#trailer">
     <img src="{poster_image_url}" width="220" height="342">
     <h2>{movie_title}</h2>
+    <p>{movie_storyline}</p>
 </div>
 '''
 
@@ -134,6 +141,7 @@ movie_tile_content = '''
 def create_movie_tiles_content(movies):
     # The HTML content for this section of the page
     content = ''
+    i = 1
     for movie in movies:
         # Extract the youtube ID from the url
         youtube_id_match = re.search(r'(?<=v=)[^&#]+', movie.trailer_youtube_url)  # NOQA
@@ -142,10 +150,23 @@ def create_movie_tiles_content(movies):
 
         # Append the tile for the movie with its content filled in
         content += movie_tile_content.format(
-            movie_title=movie.title,
-            poster_image_url=movie.poster_image_url,
-            trailer_youtube_id=trailer_youtube_id
+            movie_title = movie.title,
+            poster_image_url = movie.poster_image_url,
+            trailer_youtube_id = trailer_youtube_id,
+            movie_storyline = movie.storyline
         )
+        
+        if i % 2 == 0:
+          content += '''
+          <div class="clearfix visible-sm visible-md"></div>
+          ''';
+        elif i % 3 == 0:
+          content += '''
+          <div class="clearfix visible-lg"></div>
+          ''';
+        
+        i = i + 1;
+        
     return content
 
 
