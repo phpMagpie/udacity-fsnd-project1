@@ -159,6 +159,8 @@ def create_movie_tiles_content(movies):
             movie_storyline = movie.storyline
         )
         
+        # add clearfixes which force row breaks relevant to 
+        # the varying screen widths
         if i % 2 == 0:
           content += '''
           <div class="clearfix hidden-xs hidden-lg"></div>
