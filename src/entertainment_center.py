@@ -20,7 +20,7 @@ movie3 = media.Movie(
     "Elf",
     "Buddy was a baby in an orphanage who stowed away in Santa's "
     "sack and ended up at the North Pole",
-    "http://www.joblo.com/posters/images/full/2003-elf-3.jpg",
+    "https://upload.wikimedia.org/wikipedia/en/d/df/Elf_movie.jpg",
     "https://www.youtube.com/watch?v=gW9wRNqQ_P8"
     )
 
@@ -28,7 +28,7 @@ movie4 = media.Movie(
     "Up",
     "Carl Fredricksen as a boy wanted to explore South America and "
     "find the forbidden Paradise Falls",
-    "http://vignette3.wikia.nocookie.net/disney/images/a/a6/Up_Poster_Run.jpg/revision/latest?cb=20160202180816",  # NOQA
+    "https://vignette3.wikia.nocookie.net/disney/images/a/a6/Up_Poster_Run.jpg/revision/latest?cb=20160202180816",  # NOQA
     "https://www.youtube.com/watch?v=pkqzFUhGPJg"
     )
 
@@ -36,7 +36,7 @@ movie5 = media.Movie(
     "Monty Python's Life of Brian",
     "A 1979 British religious satire comedy film starring and written "
     "by the comedy group Monty Python",
-    "http://cdn30.us1.fansshare.com/image/montypythonslifeofbrian/the-best-life-of-brian-quotes-monty-python-life-of-brian-96191304.jpg",  # NOQA
+    "https://upload.wikimedia.org/wikipedia/en/1/18/Lifeofbrianfilmposter.jpg",  # NOQA
     "https://www.youtube.com/watch?v=TKPmGjVFbrY"
     )
 
