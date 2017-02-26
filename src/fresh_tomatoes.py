@@ -142,16 +142,17 @@ def create_movie_tiles_content(movies):
 
         # Append the tile for the movie with its content filled in
         content += movie_tile_content.format(
-            movie_title = movie.title,
-            poster_image_url = movie.poster_image_url,
-            trailer_youtube_id = trailer_youtube_id
+            movie_title=movie.title,
+            poster_image_url=movie.poster_image_url,
+            trailer_youtube_id=trailer_youtube_id
         )
     return content
 
 
 def open_movies_page(movies):
     # Create or overwrite the output file
-    output_file = open('fresh_tomatoes.html', 'w')
+    os.chdir("..");
+    output_file = open('output.html', 'w')
 
     # Replace the placeholder for the movie tiles with the
     # actual dynamically generated content
